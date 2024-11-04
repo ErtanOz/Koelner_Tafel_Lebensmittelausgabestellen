@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tafel Köln Ausgabestellen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .location { margin: 10px 0; cursor: pointer; color: #2c3e50; }
+        .icon { color: #e67e22; font-size: 20px; margin-right: 10px; cursor: pointer; }
+        .popup { display: none; position: absolute; background: #f9f9f9; padding: 15px; border: 1px solid #ddd; max-width: 300px; z-index: 1; }
+        .popup h4 { margin-top: 0; }
+    </style>
+    <script>
+        function togglePopup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Tafel Köln Ausgabestellen</h1>
+
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_0')"></i>
+        Altstadt Nord - Lebensmittelausgabe Lyskirchen
+        <div class="popup" id="popup_0">
+            <h4>Lebensmittelausgabe Lyskirchen</h4>
+            <p>Adresse: An Lyskirchen 10, 50676 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, 16:00  17:30 Uhr</p>
+            <p>Anmeldeinformationen: Bestandskunden: 15:00 Uhr; Neuregistrierungen: 14:00  14:30 Uhr in der Kirche</p>
+            <p>Geokoordinaten: 50.9325, 6.9603</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_1')"></i>
+        Altstadt-Süd - Lebensmittelausgabe Lyskirchen
+        <div class="popup" id="popup_1">
+            <h4>Lebensmittelausgabe Lyskirchen</h4>
+            <p>Adresse: An Lyskirchen 10, 50676 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, 16:00  17:30 Uhr</p>
+            <p>Anmeldeinformationen: Bestandskunden: 15:00 Uhr; Neuregistrierungen: 14:00  14:30 Uhr in der Kirche</p>
+            <p>Geokoordinaten: 50.9325, 6.9603</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_2')"></i>
+        Bayenthal - Lebensmittelausgabe Kloster der Benediktinerinnen
+        <div class="popup" id="popup_2">
+            <h4>Lebensmittelausgabe Kloster der Benediktinerinnen</h4>
+            <p>Adresse: Brühler Str. 74, 50968 Köln</p>
+            <p>Öffnungszeiten: Montags, 15:00  16:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Montags, 15:00  16:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich</p>
+            <p>Geokoordinaten: 50.9082, 6.9675</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_3')"></i>
+        Bickendorf - Aktion Nachbarschaft e.V.
+        <div class="popup" id="popup_3">
+            <h4>Aktion Nachbarschaft e.V.</h4>
+            <p>Adresse: Ossendorfer Weg 5, 50827 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, 15:00  18:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Mittwochs, 14:00  16:00 Uhr; persönliche Anmeldung erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9570, 6.8993</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_4')"></i>
+        Bilderstöckchen - Kellerladen e.V.
+        <div class="popup" id="popup_4">
+            <h4>Kellerladen e.V.</h4>
+            <p>Adresse: Escher Str. 304, 50739 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, 18:00  18:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Donnerstags, 10:00  11:00 Uhr; Nachweis der Bedürftigkeit (Kölnpass) erforderlich</p>
+            <p>Geokoordinaten: 50.9730, 6.9350</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_5')"></i>
+        Blumenberg - Lebensmittelausgabe Chorweiler
+        <div class="popup" id="popup_5">
+            <h4>Lebensmittelausgabe Chorweiler</h4>
+            <p>Adresse: Pariser Platz 1, 50765 Köln</p>
+            <p>Öffnungszeiten: Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 51.0270, 6.8940</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_6')"></i>
+        Bocklemünd - Aktion Nachbarschaft e.V.
+        <div class="popup" id="popup_6">
+            <h4>Aktion Nachbarschaft e.V.</h4>
+            <p>Adresse: Wilhelm-Löhers-Platz 8, 50829 Köln</p>
+            <p>Öffnungszeiten: Mittwochs, 15:00  17:00 Uhr</p>
+            <p>Anmeldeinformationen: Persönliche Anmeldung erforderlich; Warteliste vorhanden</p>
+            <p>Geokoordinaten: 50.9790, 6.8830</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_7')"></i>
+        Bocklemünd / Mengenich - Speisekammer der Auferstehungskirche Bocklemünd-Mengenich
+        <div class="popup" id="popup_7">
+            <h4>Speisekammer der Auferstehungskirche Bocklemünd-Mengenich</h4>
+            <p>Adresse: Görlinger Zentrum 39, 50829 Köln</p>
+            <p>Öffnungszeiten: Freitags, 14:30  15:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Freitags, 09:00  10:30 Uhr; Neuanmeldungen per E-Mail an speisekammer@bocklemuend-mengenich.de oder telefonisch unter 015678/663864; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9810, 6.8820</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_8')"></i>
+        Braunsfeld - Lebensmittelausgabe St. Franziskus
+        <div class="popup" id="popup_8">
+            <h4>Lebensmittelausgabe St. Franziskus</h4>
+            <p>Adresse: Bunzlauer Str. 25, 50858 Köln</p>
+            <p>Öffnungszeiten: Montags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung per E-Mail an tafel@franziskus.koeln; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9370, 6.8900</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_9')"></i>
+        Brück - Evangelische Freikirche Köln Ostheim
+        <div class="popup" id="popup_9">
+            <h4>Evangelische Freikirche Köln Ostheim</h4>
+            <p>Adresse: Rösrather Str. 176, 51107 Köln</p>
+            <p>Öffnungszeiten: Mittwochs, ab 13:00 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9380, 7.0480</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_10')"></i>
+        Buchforst - Lebensmittelausgabe St. Mauritius
+        <div class="popup" id="popup_10">
+            <h4>Lebensmittelausgabe St. Mauritius</h4>
+            <p>Adresse: Alte Wipperfürther Str. 53, 51065 Köln</p>
+            <p>Öffnungszeiten: Dienstags, ab 15:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Dienstags, ab 15:30 Uhr; derzeit keine Neuaufnahmen; keine Warteliste</p>
+            <p>Geokoordinaten: 50.9510, 7.0000</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_11')"></i>
+        Buchheim - Lebensmittelausgabe St. Mauritius
+        <div class="popup" id="popup_11">
+            <h4>Lebensmittelausgabe St. Mauritius</h4>
+            <p>Adresse: Alte Wipperfürther Str. 53, 51065 Köln</p>
+            <p>Öffnungszeiten: Dienstags, ab 15:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Dienstags, ab 15:30 Uhr; derzeit keine Neuaufnahmen; keine Warteliste</p>
+            <p>Geokoordinaten: 50.9510, 7.0000</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_12')"></i>
+        Chorweiler - Lebensmittelausgabe Chorweiler
+        <div class="popup" id="popup_12">
+            <h4>Lebensmittelausgabe Chorweiler</h4>
+            <p>Adresse: Pariser Platz 1, 50765 Köln</p>
+            <p>Öffnungszeiten: Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 51.0270, 6.8940</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_13')"></i>
+        Chorweiler Zentrum - Lebensmittelausgabe Chorweiler
+        <div class="popup" id="popup_13">
+            <h4>Lebensmittelausgabe Chorweiler</h4>
+            <p>Adresse: Pariser Platz 1, 50765 Köln</p>
+            <p>Öffnungszeiten: Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 51.0270, 6.8940</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_14')"></i>
+        Chorweiler Nord - Lebensmittelausgabe Chorweiler
+        <div class="popup" id="popup_14">
+            <h4>Lebensmittelausgabe Chorweiler</h4>
+            <p>Adresse: Pariser Platz 1, 50765 Köln</p>
+            <p>Öffnungszeiten: Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 51.0270, 6.8940</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_15')"></i>
+        Dellbrück - Lebensmittelausgabe Dellbrück
+        <div class="popup" id="popup_15">
+            <h4>Lebensmittelausgabe Dellbrück</h4>
+            <p>Adresse: Kopischstr. 6, 51069 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, 14:30  17:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9730, 7.0600</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_16')"></i>
+        Deutz - St. Theodor
+        <div class="popup" id="popup_16">
+            <h4>St. Theodor</h4>
+            <p>Adresse: Burgstr. 42, 51103 Köln</p>
+            <p>Öffnungszeiten: Dienstags, 14:30  18:00 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9330, 6.9860</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_17')"></i>
+        Dünnwald - Jugend- und Nachbarschaftshaus Dünnwald
+        <div class="popup" id="popup_17">
+            <h4>Jugend- und Nachbarschaftshaus Dünnwald</h4>
+            <p>Adresse: Berliner Str. 977, 51069 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9890, 7.0640</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_18')"></i>
+        Ehrenfeld - Aktion Nachbarschaft e.V.
+        <div class="popup" id="popup_18">
+            <h4>Aktion Nachbarschaft e.V.</h4>
+            <p>Adresse: Venloer Str. 429, 50825 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 16:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich; derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9450, 6.9180</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_19')"></i>
+        Esch - Pfarrheim St. Elisabeth
+        <div class="popup" id="popup_19">
+            <h4>Pfarrheim St. Elisabeth</h4>
+            <p>Adresse: Im Mönchsfeld 35, 50765 Köln</p>
+            <p>Öffnungszeiten: Montags, 14:00  15:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 51.0210, 6.8890</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_20')"></i>
+        Flittard - St. Pius
+        <div class="popup" id="popup_20">
+            <h4>St. Pius</h4>
+            <p>Adresse: Evergerstr. 44, 51061 Köln</p>
+            <p>Öffnungszeiten: Mittwochs, ab 15:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9980, 7.0030</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_21')"></i>
+        Godorf - Christus-Gemeinde
+        <div class="popup" id="popup_21">
+            <h4>Christus-Gemeinde</h4>
+            <p>Adresse: Emil-Nolde-Str. 7, 50997 Köln</p>
+            <p>Öffnungszeiten: Freitags, ab 16:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.8770, 6.9840</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_22')"></i>
+        Höhenhaus - Christengemeinde Ecclesia
+        <div class="popup" id="popup_22">
+            <h4>Christengemeinde Ecclesia</h4>
+            <p>Adresse: Im Weidenbruch 4, 51061 Köln</p>
+            <p>Öffnungszeiten: Freitags, ab 15:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung freitags 10:00  12:00 Uhr, telefonisch unter 0177/603 9311</p>
+            <p>Geokoordinaten: 50.9900, 7.0280</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_23')"></i>
+        Kalk - St. Marien
+        <div class="popup" id="popup_23">
+            <h4>St. Marien</h4>
+            <p>Adresse: Kapellenstr. 2, 51103 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9350, 7.0030</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_24')"></i>
+        Longerich - Pfarrzentrum St. Dionysius
+        <div class="popup" id="popup_24">
+            <h4>Pfarrzentrum St. Dionysius</h4>
+            <p>Adresse: Longericher Hauptstr. 74, 50739 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 15:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9980, 6.9140</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_25')"></i>
+        Mülheim - Caritasverband für die Stadt Köln e.V.
+        <div class="popup" id="popup_25">
+            <h4>Caritasverband für die Stadt Köln e.V.</h4>
+            <p>Adresse: Berliner Str. 16, 51063 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 15:00 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9620, 7.0000</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_26')"></i>
+        Nippes - Lutherkirche
+        <div class="popup" id="popup_26">
+            <h4>Lutherkirche</h4>
+            <p>Adresse: Siebachstr. 85, 50733 Köln</p>
+            <p>Öffnungszeiten: Mittwochs, ab 16:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9600, 6.9510</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_27')"></i>
+        Porz - Kath. Kirchengemeinde St. Bartholomäus
+        <div class="popup" id="popup_27">
+            <h4>Kath. Kirchengemeinde St. Bartholomäus</h4>
+            <p>Adresse: Hauptstr. 143, 51143 Köln</p>
+            <p>Öffnungszeiten: Dienstags, 15:00  17:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.8740, 7.0630</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_28')"></i>
+        Rodenkirchen - Caritas-Zentrum
+        <div class="popup" id="popup_28">
+            <h4>Caritas-Zentrum</h4>
+            <p>Adresse: Sürther Str. 108, 50999 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.8770, 6.9940</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_29')"></i>
+        Riehl - Caritas Riehl
+        <div class="popup" id="popup_29">
+            <h4>Caritas Riehl</h4>
+            <p>Adresse: Amsterdamer Str. 192, 50735 Köln</p>
+            <p>Öffnungszeiten: Freitags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9680, 6.9610</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_30')"></i>
+        Sülz - St. Nikolaus
+        <div class="popup" id="popup_30">
+            <h4>St. Nikolaus</h4>
+            <p>Adresse: Berrenrather Str. 50, 50937 Köln</p>
+            <p>Öffnungszeiten: Mittwochs, ab 15:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9240, 6.9300</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_31')"></i>
+        Vingst - Kath. Kirchengemeinde St. Theodor
+        <div class="popup" id="popup_31">
+            <h4>Kath. Kirchengemeinde St. Theodor</h4>
+            <p>Adresse: Burgstr. 42, 51103 Köln</p>
+            <p>Öffnungszeiten: Dienstags, ab 14:30 Uhr</p>
+            <p>Anmeldeinformationen: Derzeit keine Neuaufnahmen</p>
+            <p>Geokoordinaten: 50.9250, 6.9910</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_32')"></i>
+        Weiden - Pfarrei Christi Auferstehung
+        <div class="popup" id="popup_32">
+            <h4>Pfarrei Christi Auferstehung</h4>
+            <p>Adresse: Bunzlauer Str. 20, 50858 Köln</p>
+            <p>Öffnungszeiten: Freitags, ab 14:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 50.9410, 6.8810</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_33')"></i>
+        Worringen - Kath. Kirchengemeinde St. Pankratius
+        <div class="popup" id="popup_33">
+            <h4>Kath. Kirchengemeinde St. Pankratius</h4>
+            <p>Adresse: St.-Tönnis-Str. 74, 50769 Köln</p>
+            <p>Öffnungszeiten: Donnerstags, ab 16:00 Uhr</p>
+            <p>Anmeldeinformationen: Anmeldung erforderlich</p>
+            <p>Geokoordinaten: 51.0390, 6.8720</p></div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_34')"></i>
+        nan - nan
+        <div class="popup" id="popup_34">
+            <h4>nan</h4>
+            <p>Adresse: nan</p>
+            <p>Öffnungszeiten: nan</p>
+            <p>Anmeldeinformationen: nan</p>
+            </div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_35')"></i>
+        nan - nan
+        <div class="popup" id="popup_35">
+            <h4>nan</h4>
+            <p>Adresse: nan</p>
+            <p>Öffnungszeiten: nan</p>
+            <p>Anmeldeinformationen: nan</p>
+            </div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_36')"></i>
+        Zündorf - Lebensmittelausgabe Lukaskirche
+        <div class="popup" id="popup_36">
+            <h4>Lebensmittelausgabe Lukaskirche</h4>
+            <p>Adresse: Mühlenstr. 2-6, 51143 Köln</p>
+            <p>Öffnungszeiten: Freitags ab 14.00 Uhr</p>
+            <p>Anmeldeinformationen: Aus Kapazitätsgründen momentan keine Neuaufnahme möglich.</p>
+            </div></div>
+    <div class="location">
+        <i class="fas fa-utensils icon" onclick="togglePopup('popup_37')"></i>
+        Zollstock - Lebensmittelausgabe in der Philippusgemeinde
+        <div class="popup" id="popup_37">
+            <h4>Lebensmittelausgabe in der Philippusgemeinde</h4>
+            <p>Adresse: Albert-Schweitzer-Str. 3-5, 50968 Köln</p>
+            <p>Öffnungszeiten: Donnerstags von 14.30 Uhr – 15.30 Uhr</p>
+            <p>Anmeldeinformationen: Donnerstags um 14.15 Uhr. Die Kölnpässe aller Haushaltsmitglieder werden benötigt.</p>
+            </div></div>
+</body>
+</html>
