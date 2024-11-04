@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_631273a267407c6b187c277688cec3fa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_631273a267407c6b187c277688cec3fa" ></div>
+        
+    
+<div style="position: fixed; 
+            bottom: 10px; left: 10px; width: 300px; height: auto; 
+            background-color: #F4A261; color: black; font-family: Arial, sans-serif; 
+            padding: 10px; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
+            z-index: 1000;">
+    <h3 style="margin-top: 0; font-size: 16px; font-weight: bold; text-align: center;">Lebensmittelausgabestellen in Köln</h3>
+    <p style="font-size: 12px; line-height: 1.4; text-align: justify;">
+        Die Kölner Tafel betreibt selbst keine Lebensmittelausgabestellen. 
+        Die Träger wie Kirchengemeinden, Vereine und Bürgerinitiativen regeln die 
+        Lebensmittelausgabe eigenverantwortlich. Die vorhandenen Ausgabestellen 
+        arbeiten stadtteilbezogen. Nicht in jedem Stadtteil gibt es eine Ausgabestelle. 
+        Voraussetzung für die Abgabe von Lebensmitteln ist der Nachweis der Bedürftigkeit 
+        in Form eines Bürgergeld-, Jobcenter- oder Rentenbescheids sowie die Vorlage des Personalausweises.
+    </p>
+</div>
+</body>
+<script>
+    
+    
+            var map_631273a267407c6b187c277688cec3fa = L.map(
+                "map_631273a267407c6b187c277688cec3fa",
+                {
+                    center: [50.9375, 6.9603],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cb0154516b614954205c8c4d4fd7571a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var marker_764d94f66d60a5a7ce34e4602e12f43a = L.marker(
+                [50.9325, 6.9603],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_3577b870d2f6aedbdf595ca3c1230cb9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_764d94f66d60a5a7ce34e4602e12f43a.setIcon(icon_3577b870d2f6aedbdf595ca3c1230cb9);
+        
+    
+        var popup_d48166c1297bf62126e57bb3f2011a7d = L.popup({"maxWidth": 250});
+
+        
+            var html_982abb5bba99342c477e4c695f4925a2 = $(`<div id="html_982abb5bba99342c477e4c695f4925a2" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Lyskirchen</b><br><i>Stadtteil:</i> Altstadt Nord<br><i>Adresse:</i> An Lyskirchen 10, 50676 Köln<br><i>Öffnungszeiten:</i> Donnerstags, 16:00  17:30 Uhr<br><i>Anmeldeinformationen:</i> Bestandskunden: 15:00 Uhr; Neuregistrierungen: 14:00  14:30 Uhr in der Kirche<br></div>`)[0];
+            popup_d48166c1297bf62126e57bb3f2011a7d.setContent(html_982abb5bba99342c477e4c695f4925a2);
+        
+
+        marker_764d94f66d60a5a7ce34e4602e12f43a.bindPopup(popup_d48166c1297bf62126e57bb3f2011a7d)
+        ;
+
+        
+    
+    
+            var marker_5733d5b8790470f006ddd0454b4a72b7 = L.marker(
+                [50.9325, 6.9603],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_24e8a508b1a08a60716f247d138b613b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5733d5b8790470f006ddd0454b4a72b7.setIcon(icon_24e8a508b1a08a60716f247d138b613b);
+        
+    
+        var popup_488b38c85a2990031f25f3cf82e6bdf5 = L.popup({"maxWidth": 250});
+
+        
+            var html_bc145e801cf17f3bf75e1d2ed0fd5114 = $(`<div id="html_bc145e801cf17f3bf75e1d2ed0fd5114" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Lyskirchen</b><br><i>Stadtteil:</i> Altstadt-Süd<br><i>Adresse:</i> An Lyskirchen 10, 50676 Köln<br><i>Öffnungszeiten:</i> Donnerstags, 16:00  17:30 Uhr<br><i>Anmeldeinformationen:</i> Bestandskunden: 15:00 Uhr; Neuregistrierungen: 14:00  14:30 Uhr in der Kirche<br></div>`)[0];
+            popup_488b38c85a2990031f25f3cf82e6bdf5.setContent(html_bc145e801cf17f3bf75e1d2ed0fd5114);
+        
+
+        marker_5733d5b8790470f006ddd0454b4a72b7.bindPopup(popup_488b38c85a2990031f25f3cf82e6bdf5)
+        ;
+
+        
+    
+    
+            var marker_86ac43a451b089e615c2f54db2e67ec4 = L.marker(
+                [50.9082, 6.9675],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_a5eda1cb8304ac01b8105c582eb3514d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_86ac43a451b089e615c2f54db2e67ec4.setIcon(icon_a5eda1cb8304ac01b8105c582eb3514d);
+        
+    
+        var popup_0ee1755d3be08dbf42c609222ff35c9e = L.popup({"maxWidth": 250});
+
+        
+            var html_daf2b062f739cec7264e18fc725d9b40 = $(`<div id="html_daf2b062f739cec7264e18fc725d9b40" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Kloster der Benediktinerinnen</b><br><i>Stadtteil:</i> Bayenthal<br><i>Adresse:</i> Brühler Str. 74, 50968 Köln<br><i>Öffnungszeiten:</i> Montags, 15:00  16:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Montags, 15:00  16:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich<br></div>`)[0];
+            popup_0ee1755d3be08dbf42c609222ff35c9e.setContent(html_daf2b062f739cec7264e18fc725d9b40);
+        
+
+        marker_86ac43a451b089e615c2f54db2e67ec4.bindPopup(popup_0ee1755d3be08dbf42c609222ff35c9e)
+        ;
+
+        
+    
+    
+            var marker_c715eb5afaf1c4a3058fc1b082f41153 = L.marker(
+                [50.957, 6.8993],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_9aa20023e3083bc3c1d98170654f1247 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c715eb5afaf1c4a3058fc1b082f41153.setIcon(icon_9aa20023e3083bc3c1d98170654f1247);
+        
+    
+        var popup_3c7171e88d124b2d83f5afdd4368f7fd = L.popup({"maxWidth": 250});
+
+        
+            var html_5149f53c00dc414f9428758fcc2962bb = $(`<div id="html_5149f53c00dc414f9428758fcc2962bb" style="width: 100.0%; height: 100.0%;"><b>Aktion Nachbarschaft e.V.</b><br><i>Stadtteil:</i> Bickendorf<br><i>Adresse:</i> Ossendorfer Weg 5, 50827 Köln<br><i>Öffnungszeiten:</i> Donnerstags, 15:00  18:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Mittwochs, 14:00  16:00 Uhr; persönliche Anmeldung erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_3c7171e88d124b2d83f5afdd4368f7fd.setContent(html_5149f53c00dc414f9428758fcc2962bb);
+        
+
+        marker_c715eb5afaf1c4a3058fc1b082f41153.bindPopup(popup_3c7171e88d124b2d83f5afdd4368f7fd)
+        ;
+
+        
+    
+    
+            var marker_e2c3735efe2d7daaa6c66f847521e6f3 = L.marker(
+                [50.973, 6.935],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_e10b5066b0eaad2a2c543450dea5e679 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e2c3735efe2d7daaa6c66f847521e6f3.setIcon(icon_e10b5066b0eaad2a2c543450dea5e679);
+        
+    
+        var popup_c0486dc92c5423a87a466e6bff3bffc6 = L.popup({"maxWidth": 250});
+
+        
+            var html_4d056ef27b924f1896bc51a192eb4871 = $(`<div id="html_4d056ef27b924f1896bc51a192eb4871" style="width: 100.0%; height: 100.0%;"><b>Kellerladen e.V.</b><br><i>Stadtteil:</i> Bilderstöckchen<br><i>Adresse:</i> Escher Str. 304, 50739 Köln<br><i>Öffnungszeiten:</i> Donnerstags, 18:00  18:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Donnerstags, 10:00  11:00 Uhr; Nachweis der Bedürftigkeit (Kölnpass) erforderlich<br></div>`)[0];
+            popup_c0486dc92c5423a87a466e6bff3bffc6.setContent(html_4d056ef27b924f1896bc51a192eb4871);
+        
+
+        marker_e2c3735efe2d7daaa6c66f847521e6f3.bindPopup(popup_c0486dc92c5423a87a466e6bff3bffc6)
+        ;
+
+        
+    
+    
+            var marker_5f67b17d178bcd607d0d59a5690b13da = L.marker(
+                [51.027, 6.894],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_fb882e82c03961a307156649b51039bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5f67b17d178bcd607d0d59a5690b13da.setIcon(icon_fb882e82c03961a307156649b51039bd);
+        
+    
+        var popup_dfc1a07ccd537200756cee7d1713ea46 = L.popup({"maxWidth": 250});
+
+        
+            var html_688ff4bf897f1f49fe355194f4eea2f0 = $(`<div id="html_688ff4bf897f1f49fe355194f4eea2f0" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Chorweiler</b><br><i>Stadtteil:</i> Blumenberg<br><i>Adresse:</i> Pariser Platz 1, 50765 Köln<br><i>Öffnungszeiten:</i> Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_dfc1a07ccd537200756cee7d1713ea46.setContent(html_688ff4bf897f1f49fe355194f4eea2f0);
+        
+
+        marker_5f67b17d178bcd607d0d59a5690b13da.bindPopup(popup_dfc1a07ccd537200756cee7d1713ea46)
+        ;
+
+        
+    
+    
+            var marker_0121c5bd715d887744aca5aaa65fed6f = L.marker(
+                [50.979, 6.883],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_a774ecb56cfce5918e33affa6c31987b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0121c5bd715d887744aca5aaa65fed6f.setIcon(icon_a774ecb56cfce5918e33affa6c31987b);
+        
+    
+        var popup_eb30e6e4e897fe9f8085698ca651f18a = L.popup({"maxWidth": 250});
+
+        
+            var html_b0abaa7e8412a76f2423aca3a8a0840b = $(`<div id="html_b0abaa7e8412a76f2423aca3a8a0840b" style="width: 100.0%; height: 100.0%;"><b>Aktion Nachbarschaft e.V.</b><br><i>Stadtteil:</i> Bocklemünd<br><i>Adresse:</i> Wilhelm-Löhers-Platz 8, 50829 Köln<br><i>Öffnungszeiten:</i> Mittwochs, 15:00  17:00 Uhr<br><i>Anmeldeinformationen:</i> Persönliche Anmeldung erforderlich; Warteliste vorhanden<br></div>`)[0];
+            popup_eb30e6e4e897fe9f8085698ca651f18a.setContent(html_b0abaa7e8412a76f2423aca3a8a0840b);
+        
+
+        marker_0121c5bd715d887744aca5aaa65fed6f.bindPopup(popup_eb30e6e4e897fe9f8085698ca651f18a)
+        ;
+
+        
+    
+    
+            var marker_bb87e6619a11e016721ddf1275406e84 = L.marker(
+                [50.981, 6.882],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_49db7a8fde9247b8cca498e0790d556b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bb87e6619a11e016721ddf1275406e84.setIcon(icon_49db7a8fde9247b8cca498e0790d556b);
+        
+    
+        var popup_89d105bc850ecf049a5a46ff07b9dadb = L.popup({"maxWidth": 250});
+
+        
+            var html_774342e67849540f8e2df4981bfd86d6 = $(`<div id="html_774342e67849540f8e2df4981bfd86d6" style="width: 100.0%; height: 100.0%;"><b>Speisekammer der Auferstehungskirche Bocklemünd-Mengenich</b><br><i>Stadtteil:</i> Bocklemünd / Mengenich<br><i>Adresse:</i> Görlinger Zentrum 39, 50829 Köln<br><i>Öffnungszeiten:</i> Freitags, 14:30  15:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Freitags, 09:00  10:30 Uhr; Neuanmeldungen per E-Mail an speisekammer@bocklemuend-mengenich.de oder telefonisch unter 015678/663864; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_89d105bc850ecf049a5a46ff07b9dadb.setContent(html_774342e67849540f8e2df4981bfd86d6);
+        
+
+        marker_bb87e6619a11e016721ddf1275406e84.bindPopup(popup_89d105bc850ecf049a5a46ff07b9dadb)
+        ;
+
+        
+    
+    
+            var marker_88390185d315e57fa76bd59a14dcccc8 = L.marker(
+                [50.937, 6.89],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_57110e10ec85f3a8561ed8759113104e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_88390185d315e57fa76bd59a14dcccc8.setIcon(icon_57110e10ec85f3a8561ed8759113104e);
+        
+    
+        var popup_45161151eef7733fc74226eb1c9dd80d = L.popup({"maxWidth": 250});
+
+        
+            var html_09b25d92d204190e93bce4d16dbd78fa = $(`<div id="html_09b25d92d204190e93bce4d16dbd78fa" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe St. Franziskus</b><br><i>Stadtteil:</i> Braunsfeld<br><i>Adresse:</i> Bunzlauer Str. 25, 50858 Köln<br><i>Öffnungszeiten:</i> Montags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung per E-Mail an tafel@franziskus.koeln; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_45161151eef7733fc74226eb1c9dd80d.setContent(html_09b25d92d204190e93bce4d16dbd78fa);
+        
+
+        marker_88390185d315e57fa76bd59a14dcccc8.bindPopup(popup_45161151eef7733fc74226eb1c9dd80d)
+        ;
+
+        
+    
+    
+            var marker_b4e357f61869c3cbf354ddc713e45975 = L.marker(
+                [50.938, 7.048],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_ce3fdb62da20f7fe084409cfab8221e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b4e357f61869c3cbf354ddc713e45975.setIcon(icon_ce3fdb62da20f7fe084409cfab8221e8);
+        
+    
+        var popup_d2c878c2367c6ca0e36d7e31bdb41da7 = L.popup({"maxWidth": 250});
+
+        
+            var html_aacaeb3543eb58851af8765a19c277e8 = $(`<div id="html_aacaeb3543eb58851af8765a19c277e8" style="width: 100.0%; height: 100.0%;"><b>Evangelische Freikirche Köln Ostheim</b><br><i>Stadtteil:</i> Brück<br><i>Adresse:</i> Rösrather Str. 176, 51107 Köln<br><i>Öffnungszeiten:</i> Mittwochs, ab 13:00 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_d2c878c2367c6ca0e36d7e31bdb41da7.setContent(html_aacaeb3543eb58851af8765a19c277e8);
+        
+
+        marker_b4e357f61869c3cbf354ddc713e45975.bindPopup(popup_d2c878c2367c6ca0e36d7e31bdb41da7)
+        ;
+
+        
+    
+    
+            var marker_a214b376048bddb45a242db951834c40 = L.marker(
+                [50.951, 7.0],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_eef50828458fee084319c0580a64bccd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a214b376048bddb45a242db951834c40.setIcon(icon_eef50828458fee084319c0580a64bccd);
+        
+    
+        var popup_746686da10b042de1946f3bcd32ee638 = L.popup({"maxWidth": 250});
+
+        
+            var html_6b76334a9659909f0c8a5a82046a8abb = $(`<div id="html_6b76334a9659909f0c8a5a82046a8abb" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe St. Mauritius</b><br><i>Stadtteil:</i> Buchforst<br><i>Adresse:</i> Alte Wipperfürther Str. 53, 51065 Köln<br><i>Öffnungszeiten:</i> Dienstags, ab 15:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Dienstags, ab 15:30 Uhr; derzeit keine Neuaufnahmen; keine Warteliste<br></div>`)[0];
+            popup_746686da10b042de1946f3bcd32ee638.setContent(html_6b76334a9659909f0c8a5a82046a8abb);
+        
+
+        marker_a214b376048bddb45a242db951834c40.bindPopup(popup_746686da10b042de1946f3bcd32ee638)
+        ;
+
+        
+    
+    
+            var marker_212e31f7e5348080a8bfc484082b02f4 = L.marker(
+                [50.951, 7.0],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_838bd9128b1c0d7cfc4a6ecbf84aee5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_212e31f7e5348080a8bfc484082b02f4.setIcon(icon_838bd9128b1c0d7cfc4a6ecbf84aee5f);
+        
+    
+        var popup_14309f4cba391a4b2b8abe617acdc76b = L.popup({"maxWidth": 250});
+
+        
+            var html_9ed1eca2b4ea5d66ce636c222934d0df = $(`<div id="html_9ed1eca2b4ea5d66ce636c222934d0df" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe St. Mauritius</b><br><i>Stadtteil:</i> Buchheim<br><i>Adresse:</i> Alte Wipperfürther Str. 53, 51065 Köln<br><i>Öffnungszeiten:</i> Dienstags, ab 15:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Dienstags, ab 15:30 Uhr; derzeit keine Neuaufnahmen; keine Warteliste<br></div>`)[0];
+            popup_14309f4cba391a4b2b8abe617acdc76b.setContent(html_9ed1eca2b4ea5d66ce636c222934d0df);
+        
+
+        marker_212e31f7e5348080a8bfc484082b02f4.bindPopup(popup_14309f4cba391a4b2b8abe617acdc76b)
+        ;
+
+        
+    
+    
+            var marker_93629e70be417781d71589bd66211d93 = L.marker(
+                [51.027, 6.894],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_4c7b252455273207ed40a21fdd93bb17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_93629e70be417781d71589bd66211d93.setIcon(icon_4c7b252455273207ed40a21fdd93bb17);
+        
+    
+        var popup_1ac88c6b580530a423f16b804733daef = L.popup({"maxWidth": 250});
+
+        
+            var html_d8bdfc61db9bc77abdcac440dccbc5f9 = $(`<div id="html_d8bdfc61db9bc77abdcac440dccbc5f9" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Chorweiler</b><br><i>Stadtteil:</i> Chorweiler<br><i>Adresse:</i> Pariser Platz 1, 50765 Köln<br><i>Öffnungszeiten:</i> Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_1ac88c6b580530a423f16b804733daef.setContent(html_d8bdfc61db9bc77abdcac440dccbc5f9);
+        
+
+        marker_93629e70be417781d71589bd66211d93.bindPopup(popup_1ac88c6b580530a423f16b804733daef)
+        ;
+
+        
+    
+    
+            var marker_8bb4c241db1a6999ec96e3971605bef0 = L.marker(
+                [51.027, 6.894],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_5fae4fb2c6705f2feaeaf0edff4d7a66 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_8bb4c241db1a6999ec96e3971605bef0.setIcon(icon_5fae4fb2c6705f2feaeaf0edff4d7a66);
+        
+    
+        var popup_11c8f4571958a89931205e310a00f6d4 = L.popup({"maxWidth": 250});
+
+        
+            var html_5ea69db1662c5617cdce1ec3d6e61508 = $(`<div id="html_5ea69db1662c5617cdce1ec3d6e61508" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Chorweiler</b><br><i>Stadtteil:</i> Chorweiler Zentrum<br><i>Adresse:</i> Pariser Platz 1, 50765 Köln<br><i>Öffnungszeiten:</i> Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_11c8f4571958a89931205e310a00f6d4.setContent(html_5ea69db1662c5617cdce1ec3d6e61508);
+        
+
+        marker_8bb4c241db1a6999ec96e3971605bef0.bindPopup(popup_11c8f4571958a89931205e310a00f6d4)
+        ;
+
+        
+    
+    
+            var marker_9b7360e471576fe2c503b007673e2bba = L.marker(
+                [51.027, 6.894],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_3367c3ab30ecd62bbf173e0924e3b454 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9b7360e471576fe2c503b007673e2bba.setIcon(icon_3367c3ab30ecd62bbf173e0924e3b454);
+        
+    
+        var popup_a04ae5ecc4318a8336b6d013aec540d3 = L.popup({"maxWidth": 250});
+
+        
+            var html_813c18e19d737e740e8d0fce2b5f811c = $(`<div id="html_813c18e19d737e740e8d0fce2b5f811c" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Chorweiler</b><br><i>Stadtteil:</i> Chorweiler Nord<br><i>Adresse:</i> Pariser Platz 1, 50765 Köln<br><i>Öffnungszeiten:</i> Dienstags, Mittwochs, Donnerstags, 15:00  16:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung: Mittwochs, 13:00  14:30 Uhr; Kölnpässe aller Haushaltsmitglieder erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_a04ae5ecc4318a8336b6d013aec540d3.setContent(html_813c18e19d737e740e8d0fce2b5f811c);
+        
+
+        marker_9b7360e471576fe2c503b007673e2bba.bindPopup(popup_a04ae5ecc4318a8336b6d013aec540d3)
+        ;
+
+        
+    
+    
+            var marker_efde503ab5ebed4b484f19568da806d8 = L.marker(
+                [50.973, 7.06],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_7966baf085235036fa929e0212013a84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_efde503ab5ebed4b484f19568da806d8.setIcon(icon_7966baf085235036fa929e0212013a84);
+        
+    
+        var popup_d21c3f861f5b354762a15eab9ce4924e = L.popup({"maxWidth": 250});
+
+        
+            var html_97ec234cd714a57d2842e73caba51a01 = $(`<div id="html_97ec234cd714a57d2842e73caba51a01" style="width: 100.0%; height: 100.0%;"><b>Lebensmittelausgabe Dellbrück</b><br><i>Stadtteil:</i> Dellbrück<br><i>Adresse:</i> Kopischstr. 6, 51069 Köln<br><i>Öffnungszeiten:</i> Donnerstags, 14:30  17:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_d21c3f861f5b354762a15eab9ce4924e.setContent(html_97ec234cd714a57d2842e73caba51a01);
+        
+
+        marker_efde503ab5ebed4b484f19568da806d8.bindPopup(popup_d21c3f861f5b354762a15eab9ce4924e)
+        ;
+
+        
+    
+    
+            var marker_cf43967e16f2671f1c5cf509377f6a2f = L.marker(
+                [50.933, 6.986],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_5dfd8f1c631d795baa9e677200b2f330 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_cf43967e16f2671f1c5cf509377f6a2f.setIcon(icon_5dfd8f1c631d795baa9e677200b2f330);
+        
+    
+        var popup_5dad932e7c9da2742ef5f988ca73ecd4 = L.popup({"maxWidth": 250});
+
+        
+            var html_3c7043b6881f3b459cb2114eed99bf30 = $(`<div id="html_3c7043b6881f3b459cb2114eed99bf30" style="width: 100.0%; height: 100.0%;"><b>St. Theodor</b><br><i>Stadtteil:</i> Deutz<br><i>Adresse:</i> Burgstr. 42, 51103 Köln<br><i>Öffnungszeiten:</i> Dienstags, 14:30  18:00 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_5dad932e7c9da2742ef5f988ca73ecd4.setContent(html_3c7043b6881f3b459cb2114eed99bf30);
+        
+
+        marker_cf43967e16f2671f1c5cf509377f6a2f.bindPopup(popup_5dad932e7c9da2742ef5f988ca73ecd4)
+        ;
+
+        
+    
+    
+            var marker_3681a5060e204d8f72a01aa9cb961e51 = L.marker(
+                [50.989, 7.064],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_7d646706a73fec3ad1a2d0907854cd94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_3681a5060e204d8f72a01aa9cb961e51.setIcon(icon_7d646706a73fec3ad1a2d0907854cd94);
+        
+    
+        var popup_c4ab0c97d7ad264f627ff2c6c1755875 = L.popup({"maxWidth": 250});
+
+        
+            var html_2a61db01f99fa11999f9edc7a30b45f0 = $(`<div id="html_2a61db01f99fa11999f9edc7a30b45f0" style="width: 100.0%; height: 100.0%;"><b>Jugend- und Nachbarschaftshaus Dünnwald</b><br><i>Stadtteil:</i> Dünnwald<br><i>Adresse:</i> Berliner Str. 977, 51069 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_c4ab0c97d7ad264f627ff2c6c1755875.setContent(html_2a61db01f99fa11999f9edc7a30b45f0);
+        
+
+        marker_3681a5060e204d8f72a01aa9cb961e51.bindPopup(popup_c4ab0c97d7ad264f627ff2c6c1755875)
+        ;
+
+        
+    
+    
+            var marker_781f4668c5329fb1bda58d7f794e73b2 = L.marker(
+                [50.945, 6.918],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_300c76397b78eed19ee7cc1d03ae579f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_781f4668c5329fb1bda58d7f794e73b2.setIcon(icon_300c76397b78eed19ee7cc1d03ae579f);
+        
+    
+        var popup_1d5f3346284f2d6f2cf5a12c55dd23ab = L.popup({"maxWidth": 250});
+
+        
+            var html_feca5f1602e8daadce623b047ba9efc6 = $(`<div id="html_feca5f1602e8daadce623b047ba9efc6" style="width: 100.0%; height: 100.0%;"><b>Aktion Nachbarschaft e.V.</b><br><i>Stadtteil:</i> Ehrenfeld<br><i>Adresse:</i> Venloer Str. 429, 50825 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 16:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich; derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_1d5f3346284f2d6f2cf5a12c55dd23ab.setContent(html_feca5f1602e8daadce623b047ba9efc6);
+        
+
+        marker_781f4668c5329fb1bda58d7f794e73b2.bindPopup(popup_1d5f3346284f2d6f2cf5a12c55dd23ab)
+        ;
+
+        
+    
+    
+            var marker_6937127f774f29d5ba59fe8daa5069d2 = L.marker(
+                [51.021, 6.889],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_4e6ed95dbf2d9e35408c04a027f63106 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6937127f774f29d5ba59fe8daa5069d2.setIcon(icon_4e6ed95dbf2d9e35408c04a027f63106);
+        
+    
+        var popup_575c4f8bfbd86794d9623e16c80a102d = L.popup({"maxWidth": 250});
+
+        
+            var html_4b74b0021848298ca922dd3a82cd7db6 = $(`<div id="html_4b74b0021848298ca922dd3a82cd7db6" style="width: 100.0%; height: 100.0%;"><b>Pfarrheim St. Elisabeth</b><br><i>Stadtteil:</i> Esch<br><i>Adresse:</i> Im Mönchsfeld 35, 50765 Köln<br><i>Öffnungszeiten:</i> Montags, 14:00  15:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_575c4f8bfbd86794d9623e16c80a102d.setContent(html_4b74b0021848298ca922dd3a82cd7db6);
+        
+
+        marker_6937127f774f29d5ba59fe8daa5069d2.bindPopup(popup_575c4f8bfbd86794d9623e16c80a102d)
+        ;
+
+        
+    
+    
+            var marker_6e2826e8d1ad54ce8f11be4743135cca = L.marker(
+                [50.998, 7.003],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_dc1d2bd59bc5653e6612d8e72dab9a88 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6e2826e8d1ad54ce8f11be4743135cca.setIcon(icon_dc1d2bd59bc5653e6612d8e72dab9a88);
+        
+    
+        var popup_f501ba5c9cd8acdf489e27531920befa = L.popup({"maxWidth": 250});
+
+        
+            var html_8b702c3c117f0bce5fcfc50b55b2bc3c = $(`<div id="html_8b702c3c117f0bce5fcfc50b55b2bc3c" style="width: 100.0%; height: 100.0%;"><b>St. Pius</b><br><i>Stadtteil:</i> Flittard<br><i>Adresse:</i> Evergerstr. 44, 51061 Köln<br><i>Öffnungszeiten:</i> Mittwochs, ab 15:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_f501ba5c9cd8acdf489e27531920befa.setContent(html_8b702c3c117f0bce5fcfc50b55b2bc3c);
+        
+
+        marker_6e2826e8d1ad54ce8f11be4743135cca.bindPopup(popup_f501ba5c9cd8acdf489e27531920befa)
+        ;
+
+        
+    
+    
+            var marker_874e661c6c81722b156692171229441e = L.marker(
+                [50.877, 6.984],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_fb28099231a9cc27f74fb4d4dbe360d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_874e661c6c81722b156692171229441e.setIcon(icon_fb28099231a9cc27f74fb4d4dbe360d3);
+        
+    
+        var popup_b8443c36731038eccfba5b2855235f69 = L.popup({"maxWidth": 250});
+
+        
+            var html_3c6442ae33a1078d3094ddc4b30001c6 = $(`<div id="html_3c6442ae33a1078d3094ddc4b30001c6" style="width: 100.0%; height: 100.0%;"><b>Christus-Gemeinde</b><br><i>Stadtteil:</i> Godorf<br><i>Adresse:</i> Emil-Nolde-Str. 7, 50997 Köln<br><i>Öffnungszeiten:</i> Freitags, ab 16:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_b8443c36731038eccfba5b2855235f69.setContent(html_3c6442ae33a1078d3094ddc4b30001c6);
+        
+
+        marker_874e661c6c81722b156692171229441e.bindPopup(popup_b8443c36731038eccfba5b2855235f69)
+        ;
+
+        
+    
+    
+            var marker_2f4da51152c4ae0d48510e85c07ba6c6 = L.marker(
+                [50.99, 7.028],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_1e776399eefe5c4d4c6970f85b036114 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2f4da51152c4ae0d48510e85c07ba6c6.setIcon(icon_1e776399eefe5c4d4c6970f85b036114);
+        
+    
+        var popup_29b2f647ed25e43f2b6027e54672448f = L.popup({"maxWidth": 250});
+
+        
+            var html_7451dcc8bf6a9991ee8400166a012d4b = $(`<div id="html_7451dcc8bf6a9991ee8400166a012d4b" style="width: 100.0%; height: 100.0%;"><b>Christengemeinde Ecclesia</b><br><i>Stadtteil:</i> Höhenhaus<br><i>Adresse:</i> Im Weidenbruch 4, 51061 Köln<br><i>Öffnungszeiten:</i> Freitags, ab 15:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung freitags 10:00  12:00 Uhr, telefonisch unter 0177/603 9311<br></div>`)[0];
+            popup_29b2f647ed25e43f2b6027e54672448f.setContent(html_7451dcc8bf6a9991ee8400166a012d4b);
+        
+
+        marker_2f4da51152c4ae0d48510e85c07ba6c6.bindPopup(popup_29b2f647ed25e43f2b6027e54672448f)
+        ;
+
+        
+    
+    
+            var marker_2341e883147627b653e954ba5acf32be = L.marker(
+                [50.935, 7.003],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_ec0e668ba1d5ef314781eeff96f8b42b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2341e883147627b653e954ba5acf32be.setIcon(icon_ec0e668ba1d5ef314781eeff96f8b42b);
+        
+    
+        var popup_54de4e6ba975d0296c235243709f744d = L.popup({"maxWidth": 250});
+
+        
+            var html_86bcf429fa89325af5f0db66b19a80a0 = $(`<div id="html_86bcf429fa89325af5f0db66b19a80a0" style="width: 100.0%; height: 100.0%;"><b>St. Marien</b><br><i>Stadtteil:</i> Kalk<br><i>Adresse:</i> Kapellenstr. 2, 51103 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_54de4e6ba975d0296c235243709f744d.setContent(html_86bcf429fa89325af5f0db66b19a80a0);
+        
+
+        marker_2341e883147627b653e954ba5acf32be.bindPopup(popup_54de4e6ba975d0296c235243709f744d)
+        ;
+
+        
+    
+    
+            var marker_d846b8bc3b4cfcf1a59e198e463a2555 = L.marker(
+                [50.998, 6.914],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_0ec91aeb4ca9fcd99c9c34a9ac32bca8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d846b8bc3b4cfcf1a59e198e463a2555.setIcon(icon_0ec91aeb4ca9fcd99c9c34a9ac32bca8);
+        
+    
+        var popup_abfc75d150ed02b76836f34b0e06ccdf = L.popup({"maxWidth": 250});
+
+        
+            var html_ac02be8ed6b2bf53fb0508f26f0b5ba1 = $(`<div id="html_ac02be8ed6b2bf53fb0508f26f0b5ba1" style="width: 100.0%; height: 100.0%;"><b>Pfarrzentrum St. Dionysius</b><br><i>Stadtteil:</i> Longerich<br><i>Adresse:</i> Longericher Hauptstr. 74, 50739 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 15:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_abfc75d150ed02b76836f34b0e06ccdf.setContent(html_ac02be8ed6b2bf53fb0508f26f0b5ba1);
+        
+
+        marker_d846b8bc3b4cfcf1a59e198e463a2555.bindPopup(popup_abfc75d150ed02b76836f34b0e06ccdf)
+        ;
+
+        
+    
+    
+            var marker_f32587545a17633a12c5ef4c0f1be4e8 = L.marker(
+                [50.962, 7.0],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_5f04029fb9eb58f0d1253250d0a44ffd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_f32587545a17633a12c5ef4c0f1be4e8.setIcon(icon_5f04029fb9eb58f0d1253250d0a44ffd);
+        
+    
+        var popup_9a8ad63a980a4bcd7a1b250041fc026f = L.popup({"maxWidth": 250});
+
+        
+            var html_566a455a6a33cdd152034ea617ff6984 = $(`<div id="html_566a455a6a33cdd152034ea617ff6984" style="width: 100.0%; height: 100.0%;"><b>Caritasverband für die Stadt Köln e.V.</b><br><i>Stadtteil:</i> Mülheim<br><i>Adresse:</i> Berliner Str. 16, 51063 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 15:00 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_9a8ad63a980a4bcd7a1b250041fc026f.setContent(html_566a455a6a33cdd152034ea617ff6984);
+        
+
+        marker_f32587545a17633a12c5ef4c0f1be4e8.bindPopup(popup_9a8ad63a980a4bcd7a1b250041fc026f)
+        ;
+
+        
+    
+    
+            var marker_00d0a77ef7bb90e1cd100879e73a7a58 = L.marker(
+                [50.96, 6.951],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_1e6e1c12cae477cf0c85c407f68e7567 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_00d0a77ef7bb90e1cd100879e73a7a58.setIcon(icon_1e6e1c12cae477cf0c85c407f68e7567);
+        
+    
+        var popup_976fd043596ace3677af93ca8b2f0d51 = L.popup({"maxWidth": 250});
+
+        
+            var html_00a06f0650d10f9c5fa02126ad9ed7e2 = $(`<div id="html_00a06f0650d10f9c5fa02126ad9ed7e2" style="width: 100.0%; height: 100.0%;"><b>Lutherkirche</b><br><i>Stadtteil:</i> Nippes<br><i>Adresse:</i> Siebachstr. 85, 50733 Köln<br><i>Öffnungszeiten:</i> Mittwochs, ab 16:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_976fd043596ace3677af93ca8b2f0d51.setContent(html_00a06f0650d10f9c5fa02126ad9ed7e2);
+        
+
+        marker_00d0a77ef7bb90e1cd100879e73a7a58.bindPopup(popup_976fd043596ace3677af93ca8b2f0d51)
+        ;
+
+        
+    
+    
+            var marker_ec21bb1cb9bf7d4ecdc314cac5f2b228 = L.marker(
+                [50.874, 7.063],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_aef8c271da176a5fdbee843127aff61f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ec21bb1cb9bf7d4ecdc314cac5f2b228.setIcon(icon_aef8c271da176a5fdbee843127aff61f);
+        
+    
+        var popup_b1d89f1a4d88533605eb93fa2b3c1f15 = L.popup({"maxWidth": 250});
+
+        
+            var html_fe867c693560e7c2a4e49f7d67fcb4f5 = $(`<div id="html_fe867c693560e7c2a4e49f7d67fcb4f5" style="width: 100.0%; height: 100.0%;"><b>Kath. Kirchengemeinde St. Bartholomäus</b><br><i>Stadtteil:</i> Porz<br><i>Adresse:</i> Hauptstr. 143, 51143 Köln<br><i>Öffnungszeiten:</i> Dienstags, 15:00  17:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_b1d89f1a4d88533605eb93fa2b3c1f15.setContent(html_fe867c693560e7c2a4e49f7d67fcb4f5);
+        
+
+        marker_ec21bb1cb9bf7d4ecdc314cac5f2b228.bindPopup(popup_b1d89f1a4d88533605eb93fa2b3c1f15)
+        ;
+
+        
+    
+    
+            var marker_2419ec024b079a3665a46d6bb2817d4a = L.marker(
+                [50.877, 6.994],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_0445055003181489d24a8134a7ab8dc1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2419ec024b079a3665a46d6bb2817d4a.setIcon(icon_0445055003181489d24a8134a7ab8dc1);
+        
+    
+        var popup_2274a3d3760e96755442dce48024fb29 = L.popup({"maxWidth": 250});
+
+        
+            var html_9d0732264544939d6093200d7fbe4c9c = $(`<div id="html_9d0732264544939d6093200d7fbe4c9c" style="width: 100.0%; height: 100.0%;"><b>Caritas-Zentrum</b><br><i>Stadtteil:</i> Rodenkirchen<br><i>Adresse:</i> Sürther Str. 108, 50999 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_2274a3d3760e96755442dce48024fb29.setContent(html_9d0732264544939d6093200d7fbe4c9c);
+        
+
+        marker_2419ec024b079a3665a46d6bb2817d4a.bindPopup(popup_2274a3d3760e96755442dce48024fb29)
+        ;
+
+        
+    
+    
+            var marker_3d881bf591a26d4077f1617e0c856f94 = L.marker(
+                [50.968, 6.961],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_469f4820a842b6e0ec77c36780c51a67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_3d881bf591a26d4077f1617e0c856f94.setIcon(icon_469f4820a842b6e0ec77c36780c51a67);
+        
+    
+        var popup_4efaac34f02bcce989400cb93300964e = L.popup({"maxWidth": 250});
+
+        
+            var html_dca33ef8c537d931ab3dd029ac21083f = $(`<div id="html_dca33ef8c537d931ab3dd029ac21083f" style="width: 100.0%; height: 100.0%;"><b>Caritas Riehl</b><br><i>Stadtteil:</i> Riehl<br><i>Adresse:</i> Amsterdamer Str. 192, 50735 Köln<br><i>Öffnungszeiten:</i> Freitags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_4efaac34f02bcce989400cb93300964e.setContent(html_dca33ef8c537d931ab3dd029ac21083f);
+        
+
+        marker_3d881bf591a26d4077f1617e0c856f94.bindPopup(popup_4efaac34f02bcce989400cb93300964e)
+        ;
+
+        
+    
+    
+            var marker_322ae6c3f607e9fd99776416c2e9299c = L.marker(
+                [50.924, 6.93],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_6d6a13b486776b218fb299454b82e2ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_322ae6c3f607e9fd99776416c2e9299c.setIcon(icon_6d6a13b486776b218fb299454b82e2ad);
+        
+    
+        var popup_fd76bab2e44399c9049388912fc10d96 = L.popup({"maxWidth": 250});
+
+        
+            var html_356c816a6a58424bf55352b75e2c66b9 = $(`<div id="html_356c816a6a58424bf55352b75e2c66b9" style="width: 100.0%; height: 100.0%;"><b>St. Nikolaus</b><br><i>Stadtteil:</i> Sülz<br><i>Adresse:</i> Berrenrather Str. 50, 50937 Köln<br><i>Öffnungszeiten:</i> Mittwochs, ab 15:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_fd76bab2e44399c9049388912fc10d96.setContent(html_356c816a6a58424bf55352b75e2c66b9);
+        
+
+        marker_322ae6c3f607e9fd99776416c2e9299c.bindPopup(popup_fd76bab2e44399c9049388912fc10d96)
+        ;
+
+        
+    
+    
+            var marker_46c12bb3da360039d09149aacabb382e = L.marker(
+                [50.925, 6.991],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_be83919cb81cfc08c3e62cbab3134bf8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_46c12bb3da360039d09149aacabb382e.setIcon(icon_be83919cb81cfc08c3e62cbab3134bf8);
+        
+    
+        var popup_d8b9970735b1bb4e841146a26f9791a2 = L.popup({"maxWidth": 250});
+
+        
+            var html_064c64ca672bb7cb852575ef8f1e6958 = $(`<div id="html_064c64ca672bb7cb852575ef8f1e6958" style="width: 100.0%; height: 100.0%;"><b>Kath. Kirchengemeinde St. Theodor</b><br><i>Stadtteil:</i> Vingst<br><i>Adresse:</i> Burgstr. 42, 51103 Köln<br><i>Öffnungszeiten:</i> Dienstags, ab 14:30 Uhr<br><i>Anmeldeinformationen:</i> Derzeit keine Neuaufnahmen<br></div>`)[0];
+            popup_d8b9970735b1bb4e841146a26f9791a2.setContent(html_064c64ca672bb7cb852575ef8f1e6958);
+        
+
+        marker_46c12bb3da360039d09149aacabb382e.bindPopup(popup_d8b9970735b1bb4e841146a26f9791a2)
+        ;
+
+        
+    
+    
+            var marker_50534628351366d6ca692ccd9433d4d8 = L.marker(
+                [50.941, 6.881],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_0c9aed2829944127a012caf46d6ba096 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_50534628351366d6ca692ccd9433d4d8.setIcon(icon_0c9aed2829944127a012caf46d6ba096);
+        
+    
+        var popup_1b2090942effc1542b6f7fd0b1181daf = L.popup({"maxWidth": 250});
+
+        
+            var html_d3c4e5a9df4f9ef0fdc650f64c859c18 = $(`<div id="html_d3c4e5a9df4f9ef0fdc650f64c859c18" style="width: 100.0%; height: 100.0%;"><b>Pfarrei Christi Auferstehung</b><br><i>Stadtteil:</i> Weiden<br><i>Adresse:</i> Bunzlauer Str. 20, 50858 Köln<br><i>Öffnungszeiten:</i> Freitags, ab 14:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_1b2090942effc1542b6f7fd0b1181daf.setContent(html_d3c4e5a9df4f9ef0fdc650f64c859c18);
+        
+
+        marker_50534628351366d6ca692ccd9433d4d8.bindPopup(popup_1b2090942effc1542b6f7fd0b1181daf)
+        ;
+
+        
+    
+    
+            var marker_1f2f014c466ad725812389b2f20224fc = L.marker(
+                [51.039, 6.872],
+                {}
+            ).addTo(map_631273a267407c6b187c277688cec3fa);
+        
+    
+            var icon_fb14154b65297c686cd9b43b0515197f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1f2f014c466ad725812389b2f20224fc.setIcon(icon_fb14154b65297c686cd9b43b0515197f);
+        
+    
+        var popup_0f4ffc246569039cd6ea2ffc904861f6 = L.popup({"maxWidth": 250});
+
+        
+            var html_154776afd5bcce01bc24d0a00aaee26c = $(`<div id="html_154776afd5bcce01bc24d0a00aaee26c" style="width: 100.0%; height: 100.0%;"><b>Kath. Kirchengemeinde St. Pankratius</b><br><i>Stadtteil:</i> Worringen<br><i>Adresse:</i> St.-Tönnis-Str. 74, 50769 Köln<br><i>Öffnungszeiten:</i> Donnerstags, ab 16:00 Uhr<br><i>Anmeldeinformationen:</i> Anmeldung erforderlich<br></div>`)[0];
+            popup_0f4ffc246569039cd6ea2ffc904861f6.setContent(html_154776afd5bcce01bc24d0a00aaee26c);
+        
+
+        marker_1f2f014c466ad725812389b2f20224fc.bindPopup(popup_0f4ffc246569039cd6ea2ffc904861f6)
+        ;
+
+        
+    
+</script>
+</html>
