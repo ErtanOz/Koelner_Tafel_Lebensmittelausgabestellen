@@ -71,6 +71,28 @@
             color: #ffcc00;
             font-weight: bold;
         }
+        .mini-info-box {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 165, 0, 0.9);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            text-align: center;
+            cursor: pointer;
+        }
+        .mini-info-box i {
+            font-size: 20px;
+            line-height: 30px;
+        }
         .control-panel {
             position: fixed;
             top: 20px;
@@ -201,11 +223,14 @@
             </button>
         </div>
     </div>
-    <div class="info-box">
+    <div class="info-box" id="info-box">
         <h3>Lebensmittelausgabestellen in Köln</h3>
         <p>
             Die Kölner Tafel selbst betreibt keine eigenen Lebensmittelausgabestellen. Stattdessen wird die Verteilung von Lebensmitteln durch lokale Träger wie Kirchengemeinden, Vereine und Bürgerinitiativen eigenständig organisiert. Diese Ausgabestellen sind auf die verschiedenen Stadtteile verteilt, wobei nicht jeder Stadtteil eine solche Stelle hat. Um Lebensmittel zu erhalten, müssen Bedürftige ihren Anspruch durch Vorlage eines entsprechenden Nachweises, wie Bürgergeld-, Jobcenter- oder Rentenbescheid, sowie des Personalausweises belegen. Weitere Informationen und Unterstützung finden Sie unter: <a href="https://tafel.koeln/">https://tafel.koeln/</a> (Aktualisiert am 08.11.2024).
         </p>
+    </div>
+    <div class="mini-info-box" id="mini-info-box" onclick="showInfoBox()">
+        <i class="fa fa-info"></i>
     </div>
 
     <script>
@@ -374,6 +399,26 @@
         function setDestination(lat, lng, address) {
             selectedDestination = { lat: lat, lng: lng };
             document.getElementById('start-point').focus();
+        }
+
+        // Function to hide the info box after 2 seconds
+        setTimeout(function() {
+            var infoBox = document.getElementById('info-box');
+            var miniInfoBox = document.getElementById('mini-info-box');
+            if (infoBox) {
+                infoBox.style.display = 'none';
+                miniInfoBox.style.display = 'block';
+            }
+        }, 2000);
+
+        // Function to show the info box when mini box is clicked
+        function showInfoBox() {
+            var infoBox = document.getElementById('info-box');
+            var miniInfoBox = document.getElementById('mini-info-box');
+            if (infoBox) {
+                infoBox.style.display = 'block';
+                miniInfoBox.style.display = 'none';
+            }
         }
     </script>
 </body>
